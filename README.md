@@ -72,7 +72,7 @@
 ```bash
 # Clone the repo
 git clone https://github.com/Medamine-Bahassou/aur-security-manager.git
-cd yay-manager
+cd aur-security-manager
 
 # (Recommended) Create a virtual environment
 python -m venv venv
