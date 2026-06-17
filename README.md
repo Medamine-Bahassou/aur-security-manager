@@ -67,38 +67,77 @@
 
 ## 🚀 Usage
 
+### Installation
+
+```bash
+# Clone the repo
+git clone https://github.com/MedAmine-Bahassou/yay-manager.git
+cd yay-manager
+
+# (Recommended) Create a virtual environment
+python -m venv venv
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+### Running
+
 ```bash
 python aur_security_manager.py
 ```
 
-1. **Search** — Enter a package name and click *Search AUR*.
-2. **Review** — Select a package to fetch its PKGBUILD and run the security analyser.
-3. **Analyse** — The *Security Findings* tab shows all flagged patterns with severity and line numbers.
-4. **Install** — Click *Install with yay*. The safety gate will block or warn about dangerous packages.
-5. **Monitor** — A terminal-like window shows real-time `yay` output. Cancel anytime.
+### Workflow
 
-## ⚙️ How It Works
+#### 1. 🔍 Search for a package
 
-### Danger Formula Engine
+Type a package name into the search bar and click **Search AUR** (or press <kbd>Enter</kbd>).
+Results appear in a table showing name, version, description, and maintainer.
 
-The analyser applies a rule-based engine that learns signatures from known-malicious AUR packages and re-applies them to any package the user tries to install. Each rule matches specific patterns in the PKGBUILD and assigns a severity score:
+> **Tip:** Use partial or full package names. The search queries the official AUR RPC API.
 
-| Severity | Score Range | Behaviour |
-|----------|-------------|-----------|
-| Info | 1–10 | Informational finding |
-| Low | 11–25 | Minor concern |
-| Medium | 26–50 | Suspicious pattern |
-| High | 51–75 | Dangerous — requires explicit confirmation |
-| Critical | 76–100 | Blocked automatically |
+#### 2. 📄 Review the PKGBUILD
 
-### Safety Gate Flow
+Select a package from the results and click **Fetch PKGBUILD**.
+The raw PKGBUILD is displayed in a monospace viewer with syntax-friendly colours.
 
-```
-User clicks "Install with yay"
-  ├── Critical severity → ❌ Blocked (must install manually)
-  ├── High severity     → ⚠️  "I accept the risk" dialog required
-  └── Below high        → ✅ Final confirmation → yay install
-```
+#### 3. 🛡️ Run security analysis
+
+Click **Analyse** to scan the PKGBUILD against the danger formula engine.
+Switch to the **Security Findings** tab to see:
+
+- Each detected pattern with a severity badge (info / low / medium / high / critical)
+- The exact line number where the pattern was found
+- A detailed description of the risk
+- Historical malware references when applicable
+
+#### 4. ⚠️ Understand the verdict
+
+The analyser computes a risk score (0–100) and one of four verdicts:
+
+| Verdict | Meaning |
+|---------|---------|
+| 🟢 Safe | No significant issues detected |
+| 🟡 Caution | Minor concerns — review before installing |
+| 🟠 Dangerous | High-risk patterns — explicit confirmation required |
+| 🔴 Critical | Malicious patterns detected — installation **blocked** |
+
+#### 5. 📦 Install the package
+
+Click **Install with yay** to start the installation.
+
+- **Critical** packages are **blocked** outright — you must install manually if you disagree.
+- **Dangerous** packages show an „I accept the risk“ dialog before proceeding.
+- **Safe / Caution** packages go straight to a final confirmation.
+
+Once confirmed, a terminal-like popup opens showing real-time `yay` output.
+You can **cancel** the installation at any time by clicking the **Cancel** button.
+
+#### 6. ✅ After installation
+
+The window shows a success or failure message. Click **Close** to dismiss it.
+The main window status bar also reflects the result.
 
 ## 📜 Malware References
 
