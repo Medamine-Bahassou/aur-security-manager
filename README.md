@@ -113,10 +113,6 @@ The analyser includes a curated database (updated as of July 2024) covering real
 | Theme doesn't look modern | Install `sv-ttk`: `pip install sv-ttk` |
 | Dark title bar not working (Windows) | Install `pywinstyles`: `pip install pywinstyles` |
 
-## 📄 License
-
-MIT — see [LICENSE](LICENSE) (or the source header).
-
 ## 👤 Author
 
-**Super Z**
+**MedAmine-Bahassou**
