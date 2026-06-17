@@ -1,0 +1,74 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Dependency directories
+node_modules/
+vendor/
+
+# Build outputs
+dist/
+build/
+out/
+target/
+
+# Cache
+.cache/
+.tmp/
+temp/
+
+# Coverage reports
+coverage/
+*.lcov
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+
+# Java
+*.class
+*.jar
+.gradle/
+
+# C/C++
+*.o
+*.obj
+*.exe
+
+# Rust
+target/
+Cargo.lock
+
+# Go
+bin/
+
+# Test artifacts
+test-results/
+junit.xml
+
+# Archives
+*.zip
+*.tar
+*.gz
+
+# Local configuration
+local.settings.json
+*.local
