@@ -71,7 +71,7 @@
 
 ```bash
 # Clone the repo
-git clone https://github.com/MedAmine-Bahassou/yay-manager.git
+git clone https://github.com/Medamine-Bahassou/aur-security-manager.git
 cd yay-manager
 
 # (Recommended) Create a virtual environment
