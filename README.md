@@ -44,7 +44,15 @@
 ## 🖼️ Screenshots
 
 <p align="center">
-  <em>(Screenshots coming soon)</em>
+  <img src="screenshots/1.png" alt="Main window — search and PKGBUILD viewer" width="600" />
+  <br />
+  <em>Search, browse, and analyse AUR packages</em>
+</p>
+
+<p align="center">
+  <img src="screenshots/2.png" alt="Install window — real-time terminal output" width="600" />
+  <br />
+  <em>Real-time yay install output with cancel support</em>
 </p>
 
 ## 📦 Requirements
